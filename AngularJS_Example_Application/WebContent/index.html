@@ -16,11 +16,9 @@
     <div class="col-md-10">
       <!--Body content-->
 
-    Search: <input ng-model="query">
+    Search: <input ng-model="query">	
 
-	
-	
-	<ul class="phones">
+	<ul class="albums">
 	  <li ng-repeat="album in albums | filter:query ">
 	    <span>{{album.artist}}</span>
 	    <p>{{album.title}}</p>

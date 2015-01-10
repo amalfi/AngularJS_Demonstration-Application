@@ -1,9 +1,9 @@
-var phonecatApp = angular.module('musicAlbumsApp', []);
+var musicAlbumsApp = angular.module('musicAlbumsApp', []);
 
-phonecatApp.controller('MusicAlbumsCtrl', function ($scope, $http) {
+musicAlbumsApp.controller('MusicAlbumsCtrl', function ($scope, $http) {
   $http.get("./js/musicAlbums.json").success(function(data) 
  {
-    $scope.phones = data;
+    $scope.albums = data;
   });
 
 });
