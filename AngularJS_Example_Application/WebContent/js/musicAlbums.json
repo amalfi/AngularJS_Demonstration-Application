@@ -1,0 +1,28 @@
+[
+ {
+  "title": "Black Album",
+  "artist": "Metallica",
+  "price": "20 $",
+ }
+ {
+  "title": "Golden Cobra",
+  "artist": "Limp Bizkit",
+  "price": "10 $",
+ }
+ {
+  "title": "Gratest Hits",
+  "artist": "Queen",
+  "price": "20 $",
+ }
+ {
+  "title": "Guns n Roses",
+  "artist": "Apethite for Destruction",
+  "price": "40 $",
+ }
+ {
+  "title": "The best of",
+  "artist": "U2",
+  "price": "30 $",
+ }
+]
+

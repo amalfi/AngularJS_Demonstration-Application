@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="musicAlbumsApp">
+<head>
+<meta charset="UTF-8">
+<title>AngularJS Demonstration App</title>
+<script type="text/javascript" src="./js/angular.js"></script>
+<script type="text/javascript" src="./js/mycontroller.js"></script>
+<script type="text/javascript" src="./js/musicAlbums.json"></script>
+
+</head>
+<body ng-controller="MusicAlbumsCtrl">
+
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-md-10">
+      <!--Body content-->
+
+    Search: <input ng-model="query">
+
+	
+	
+	<ul class="phones">
+	  <li ng-repeat="album in albums | filter:query ">
+	    <span>{{album.artist}}</span>
+	    <p>{{album.title}}</p>
+	    <p>{{album.price}}</p>
+	    
+	  </li>
+	</ul>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
