@@ -17,13 +17,20 @@
       <!--Body content-->
 
     Search: <input ng-model="query">	
-
+ 	Sort by:
+      <select ng-model="orderProp">
+        <option value="artist">Artist</option>
+        <option value="title">Album title</option>
+        <option value="title">Price</option>
+      
+      </select>
+      
 	<ul class="albums">
-	  <li ng-repeat="album in albums | filter:query ">
-	    <span>{{album.artist}}</span>
-	    <p>{{album.title}}</p>
-	    <p>{{album.price}}</p>
-	    
+	  <li ng-repeat="album in albums | filter:query | orderBy:orderProp ">
+	    <span>Arist name : {{album.artist}}</span>
+	    <p>Album title : {{album.title}}</p>
+	    <p>Album price ($) : {{album.price}}</p>
+	    <p>Album cover : <img ng-src="{{album.imageURL}}"> </p>
 	  </li>
 	</ul>
 

@@ -2,27 +2,33 @@
  {
   "title": "Black Album",
   "artist": "Metallica",
-  "price": "20"
+  "price": "20",
+  "imageURL" : "./img/black.jpg"
  },
  {
   "title": "Golden Cobra",
   "artist": "Limp Bizkit",
-  "price": "10"
+  "price": "10",
+  "imageURL" : "./img/goldencobra.jpg"
+  
  },
  {
   "title": "Gratest Hits",
   "artist": "Queen",
-  "price": "20"
+  "price": "20",
+  "imageURL" : "./img/black.jpg"
  },
  {
   "title": "Guns n Roses",
   "artist": "Apethite for Destruction",
-  "price": "40"
+  "price": "40",
+  "imageURL" : "./img/apethite.jpg"
  },
  {
   "title": "The best of",
   "artist": "U2",
-  "price": "30 $"
+  "price": "30 $",
+  "imageURL" : "./img/bestofu2.jpg"
  }
 ]
 

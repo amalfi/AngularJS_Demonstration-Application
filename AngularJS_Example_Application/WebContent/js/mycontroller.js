@@ -5,5 +5,6 @@ musicAlbumsApp.controller('MusicAlbumsCtrl', function ($scope, $http) {
  {
     $scope.albums = data;
   });
+  $scope.orderProp = 'artist';
 
 });
