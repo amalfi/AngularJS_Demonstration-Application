@@ -3,40 +3,88 @@
 <head>
 <meta charset="UTF-8">
 <title>AngularJS Demonstration App</title>
-<script type="text/javascript" src="./js/angular.js"></script>
-<script type="text/javascript" src="./js/mycontroller.js"></script>
+<script type="text/javascript" src="./js/angsrc/angular.js"></script>
+<script type="text/javascript" src="./js/angsrc/angular-resource.js"></script>
+<script type="text/javascript" src="./js/angsrc/angular-route.js"></script>
 <script type="text/javascript" src="./js/musicAlbums.json"></script>
+<script type="text/javascript" src="./js/controllers/mycontroller.js"></script>
+<script type="text/javascript" src="./js/services/services.js"></script>
 
+<style>
+	.demo {
+		border:1px solid #C0C0C0;
+		border-collapse:collapse;
+		padding:5px;
+	}
+	.demo th {
+		border:1px solid #C0C0C0;
+		padding:5px;
+		background:#F0F0F0;
+	}
+	.demo td {
+		border:1px solid #C0C0C0;
+		padding:5px;
+	}
+</style>
 </head>
-<body ng-controller="MusicAlbumsCtrl">
 
-<div class="container-fluid">
-  <div class="row">
-
-    <div class="col-md-10">
-      <!--Body content-->
-
-    Search: <input ng-model="query">	
- 	Sort by:
-      <select ng-model="orderProp">
-        <option value="artist">Artist</option>
-        <option value="title">Album title</option>
-        <option value="title">Price</option>
-      
-      </select>
-      
-	<ul class="albums">
-	  <li ng-repeat="album in albums | filter:query | orderBy:orderProp ">
-	    <span>Arist name : {{album.artist}}</span>
-	    <p>Album title : {{album.title}}</p>
-	    <p>Album price ($) : {{album.price}}</p>
-	    <p>Album cover : <img ng-src="{{album.imageURL}}"> </p>
-	  </li>
-	</ul>
-
-    </div>
-  </div>
-</div>
+<body ng-controller="MusicAlbumsListController">
+	<div class="container-fluid">
+	  <div class="row">
+		    <div class="col-md-10">
+		      <!--   $scope.albums = data.topalbums;
+		    //data.topalbums.album[1].name ('Master of Puppets'); -->
+			<table class="demo">
+				<caption>Music Albums Searcher</caption>
+				<thead>
+				<tr>
+					<th>Search Criteria</th>
+					<th>Albums Names</th>
+				</tr>
+				</thead>
+				<tbody>
+					<tr>
+					  <td>   
+					  <div id="artistInputForm" > 
+					   <!-- Input box for enter artist name  -->
+						  <form ng-submit="submit()">
+							  Enter artist name and hit enter:
+							  <input type="text" ng-model="text" name="text" />
+							  <input type="submit" id="submit" value="Submit" />
+						 </form>
+					 </div>
+				      
+				      </td>
+						<td>	
+							  <div id="musicAlbumsListDiv">
+							  <!-- Section for showing albums list and filter it by criteria -->
+							      <br>
+							      Filter : 
+							      <input ng-model="query">	
+							 	  Sort by:
+							      <select ng-model="orderProp">
+							        <option value="artist">Artist</option>
+							        <option value="title">Album title</option>
+							        <option value="title">Price</option>
+							      </select>
+						      <!-- Section for showing albums list and filter it by criteria -->
+						      </div>
+							 
+							 <ul class="albums">
+							  <li ng-repeat="album in albums | filter:query | orderBy:orderProp ">
+							    <span>Album name : {{album}}</span>
+							  </li>
+							</ul>
+							
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		
+		    </div>
+		  </div>
+	</div>
 
 </body>
+
 </html>
